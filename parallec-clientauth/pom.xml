@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.parallec</groupId>
     <artifactId>parallec-plugin-http-clientauth</artifactId>
-    <version>0.8.12-beta</version>
+    <version>0.9.0</version>
     <packaging>jar</packaging>
     <name>io.parallec:parallec-core</name>
     <url>https://github.com/eBay/parallec-plugins</url>

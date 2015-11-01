@@ -39,7 +39,6 @@ import org.slf4j.LoggerFactory;
 import com.ning.http.client.AsyncHttpClient;
 import com.ning.http.client.AsyncHttpClientConfig;
 
-
 /**
  * Async http client store for SSL Client Auth ready.
  * 

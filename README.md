@@ -8,20 +8,21 @@ SSL Client Authentication Plug-in for [Parallec](http://www.parallec.io). One li
 You will be good to go with. You may over provide customized absolute or relative path to load the keystore. 
 
 ###Maven/Gradle Import
-Maven
+Along with your parallec import, also add: 
+#####Maven
 
 ```xml
 <dependency>
 	<groupId>io.parallec</groupId>
 	<artifactId>parallec-plugin-http-clientauth</artifactId>
-	<version>0.8.12-beta</version>
+	<version>0.9.0</version>
 </dependency>
 ```	
 
-Gradle
+#####Gradle
 
 ```xml
-compile 'io.parallec:parallec-plugin-http-clientauth:0.8.12-beta'
+compile 'io.parallec:parallec-plugin-http-clientauth:0.9.0'
 ```
 
 
