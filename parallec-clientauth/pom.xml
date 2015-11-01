@@ -18,8 +18,8 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git@github.com:eBay/parallec.git</connection>
-        <developerConnection>scm:git:git@github.com:eBay/parallec.git</developerConnection>
+        <connection>scm:git:git@github.com:eBay/parallec-plugins.git</connection>
+        <developerConnection>scm:git:git@github.com:eBay/parallec-plugins.git</developerConnection>
         <url>https://github.com/eBay/parallec</url>
     </scm>
 
@@ -27,12 +27,6 @@
         <developer>
             <name>Yuanteng (Jeff) Pei</name>
             <email>ypei@ebay.com</email>
-            <organization>eBay</organization>
-            <organizationUrl>www.ebay.com</organizationUrl>
-        </developer>
-        <developer>
-            <name>Teng Song</name>
-            <email>tesong@ebay.com</email>
             <organization>eBay</organization>
             <organizationUrl>www.ebay.com</organizationUrl>
         </developer>

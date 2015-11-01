@@ -1,9 +1,13 @@
-# parallec-clientauth
+
+
+## Parallec Plugins
+
+## parallec-clientauth
 
 SSL Client Authentication Plug-in for Parallec. One line to help you set the SSL context for Client Authentication. Import it and add the jks file and the text file containing the private key pass to userdata folder.
-You will be good to go with. You may over provide customized absolute or relative path to load the paths 
+You will be good to go with. You may over provide customized absolute or relative path to load the keystore. 
 
-###Maven Import
+###Maven/Gradle Import
 	
 ```xml
 <dependency>
@@ -12,6 +16,13 @@ You will be good to go with. You may over provide customized absolute or relativ
 	<version>0.8.12-beta</version>
 </dependency>
 ```	
+
+Gradle
+
+```xml
+compile 'io.parallec:parallec-plugin-http-clientauth:0.8.12-beta'
+```
+
 
 ##How to use
 
@@ -54,8 +65,26 @@ enableClientAuth(ParallelClient pc,
 ```
 ###Shutdown HttpClientFactory
 
-The enableClientAuth will automatic create the Async HTTP Client factory which loaded the key pairs.  If need to close the clients, call 
+The enableClientAuth will automatic create the Async HTTP Client factory which loads the key pairs.  If need to close the clients, call 
 
 	ClientAuthAdaptor.getInstance().shutdown();
 
 For more details please check: src/main/java/io/parallec/plugin/http/clientauth/ClientAuthAdaptor.java
+
+
+## Author and Contributors
+#### Original Author
+Yuanteng (Jeff) Pei
+
+#### Contributors
+
+Your name here
+
+Thanks for trying Parallec.io. Please submit a git issue for any questions you have.
+
+
+## Licenses
+
+Code licensed under Apache License v2.0
+
+© 2015 eBay Software Foundation

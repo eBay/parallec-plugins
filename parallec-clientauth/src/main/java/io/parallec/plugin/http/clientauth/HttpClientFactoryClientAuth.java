@@ -1,3 +1,15 @@
+/*  
+Copyright [2013-2015] eBay Software Foundation
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
 package io.parallec.plugin.http.clientauth;
 
 import io.parallec.core.config.ParallecGlobalConfig;
@@ -29,24 +41,44 @@ import com.ning.http.client.AsyncHttpClientConfig;
 
 
 /**
- * Async http client store for SSL Client Auth ready 
- * @author Yuanteng Jeff Pei
+ * Async http client store for SSL Client Auth ready.
+ * 
+ * @author Yuanteng (Jeff) Pei
  * 
  */
 public final class HttpClientFactoryClientAuth {
     
+	/** The fast client. */
 	private AsyncHttpClient fastClient;
+	
+	/** The slow client. */
 	private AsyncHttpClient slowClient;
+	
+	/** The is closed. */
 	private AtomicBoolean isClosed = new AtomicBoolean(false);
+	
+	/** The logger. */
 	private static Logger logger = LoggerFactory.getLogger(HttpClientFactoryClientAuth.class);
 	
+	/** The ssl context. */
 	private SSLContext sslContext;
 
+	/**
+	 * Stop.
+	 */
 	public void stop() {
 		fastClient.close();
 		slowClient.close();
 	}
 
+	/**
+	 * Instantiates a new http client factory client auth.
+	 *
+	 * @param privKeyPasshraseFilePath the priv key passhrase file path
+	 * @param keystoreFilePath the keystore file path
+	 * @param algorithm the algorithm
+	 * @param verifyServerCert the verify server cert
+	 */
 	public HttpClientFactoryClientAuth(
 	        String privKeyPasshraseFilePath, String keystoreFilePath
 	        ,String algorithm, boolean verifyServerCert
@@ -105,6 +137,9 @@ public final class HttpClientFactoryClientAuth {
 		this.slowClient = slowClient;
 	}
 	
+	/**
+	 * Close clients.
+	 */
 	public void closeClients() {
 		slowClient.close();
 		fastClient.close();
@@ -112,10 +147,20 @@ public final class HttpClientFactoryClientAuth {
 		isClosed.set(true);
 	}
 
+	/**
+	 * Gets the fast client.
+	 *
+	 * @return the fast client
+	 */
 	public AsyncHttpClient getFastClient() {
 		return fastClient;
 	}
 
+	/**
+	 * Gets the slow client.
+	 *
+	 * @return the slow client
+	 */
 	public AsyncHttpClient getSlowClient() {
 		return slowClient;
 	}
@@ -129,6 +174,11 @@ public final class HttpClientFactoryClientAuth {
 	 * -deststoretype JKS
 	 * 
 	 * The JKS has the client cert/ client key; and the cert of the server.
+	 *
+	 * @param privKeyFilePath the priv key file path
+	 * @param keystoreFilePath the keystore file path
+	 * @param algorithm the algorithm
+	 * @param verifyServerCert the verify server cert
 	 */
 	public void initCertificateVerification(
 	        String privKeyFilePath, String keystoreFilePath,
@@ -209,18 +259,27 @@ public final class HttpClientFactoryClientAuth {
 	 * class CustomTrustManager.
 	 */
 	public static class CustomTrustManager implements X509TrustManager {
+		
 		/**
+		 * Gets the accepted issuers.
+		 *
 		 * @return certificate.
 		 */
 		public X509Certificate[] getAcceptedIssuers() {
 			return (X509Certificate[]) null;
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.net.ssl.X509TrustManager#checkClientTrusted(java.security.cert.X509Certificate[], java.lang.String)
+		 */
 		@Override
 		public void checkClientTrusted(X509Certificate[] chain, String authType)
 				throws CertificateException {
 		}
 
+		/* (non-Javadoc)
+		 * @see javax.net.ssl.X509TrustManager#checkServerTrusted(java.security.cert.X509Certificate[], java.lang.String)
+		 */
 		@Override
 		public void checkServerTrusted(X509Certificate[] chain, String authType)
 				throws CertificateException {

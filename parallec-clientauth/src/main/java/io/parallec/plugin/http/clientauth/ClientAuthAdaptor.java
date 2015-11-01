@@ -19,16 +19,18 @@ import io.parallec.core.resources.HttpClientType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-// TODO: Auto-generated Javadoc
 /**
- * client auth adaptor ready for use. put the private key pass file to
+ * SSL client authentication adaptor ready for use. put the private key pass file to
  * userdata/keypass put the keystore file to userdata/keystore.jks
  * 
  * call ClientAuthAdaptor.changeDefaultToClientAuthClient(parallelClient);
  * 
  * to enable mutual auth.
  * 
- * @author Yuanteng Jeff Pei
+ * This will set the 2 client auth enabled async http client as the 2 customized clients into the HTTP Store, 
+ * then set default as the CUSTOM_FAST
+ * 
+ * @author Yuanteng (Jeff) Pei
  *
  */
 public class ClientAuthAdaptor {
