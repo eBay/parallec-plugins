@@ -26,6 +26,12 @@ compile 'io.parallec:parallec-plugin-http-clientauth:0.9.0'
 ```
 
 
+###Versions
+
+* The latest production-ready version is `0.9.x`, where we use in production.
+* **On async-http-client 2.x** The Parallec plugin version using more up-to-date `async-http-client` (currently using AHC version `2.0.15`) is `0.20.0-SNAPSHOT`. This version **requires JDK8** due to AHC 2.x and should be used with the parallec-core with the same version `0.20.0-SNAPSHOT`, details please check [#37](https://github.com/eBay/parallec/issues/37).
+
+
 ##How to use
 
 1. Add the .jks file and rename it to "keystore.jks"  ; Add a text file only containing the passphrase for the private key and rename it to "keypass";  Put both file under userdata folder in your project directory
