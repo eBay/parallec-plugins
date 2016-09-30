@@ -5,7 +5,7 @@
     <artifactId>parallec-plugin-http-clientauth</artifactId>
     <version>0.20.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>io.parallec:parallec-core</name>
+    <name>io.parallec:parallec-plugin-http-clientauth</name>
     <url>https://github.com/eBay/parallec-plugins</url>
     <description>
         Parallec Simple SSL Client Authentication plugin.
