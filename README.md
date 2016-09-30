@@ -74,6 +74,11 @@ The enableClientAuth will automatic create the Async HTTP Client factory which l
 For more details please check: src/main/java/io/parallec/plugin/http/clientauth/ClientAuthAdaptor.java
 
 
+###Versions
+
+* The latest production-ready version is `0.9.x`, where we use in production.
+* **On async-http-client 2.x** The Parallec plugin version using more up-to-date `async-http-client` (currently using AHC version `2.0.15`) is `0.20.0-SNAPSHOT`. This version **requires JDK8** due to AHC 2.x and can be used with the parallec-core with the same version `0.20.0-SNAPSHOT`, details please check [#37](https://github.com/eBay/parallec/issues/37).
+
 ## Author and Contributors
 #### Original Author
 Yuanteng (Jeff) Pei
